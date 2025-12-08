@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "append_css",
+			"type": "shell",
+			"command": "echo \"\n.notification {\n    position: fixed;\n    top: 20px;\n    left: 50%;\n    transform: translateX(-50%);\n    background-color: var(--bg-secondary);\n    color: var(--text-color);\n    padding: 10px 20px;\n    border-radius: 8px;\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n    z-index: 1000;\n    animation: fadeInOut 2s ease-in-out;\n    border: 1px solid var(--border-color);\n}\n\n@keyframes fadeInOut {\n    0% { opacity: 0; transform: translate(-50%, -20px); }\n    10% { opacity: 1; transform: translate(-50%, 0); }\n    90% { opacity: 1; transform: translate(-50%, 0); }\n    100% { opacity: 0; transform: translate(-50%, -20px); }\n}\" >> src/components/Header/Header.css"
+		},
+		{
+			"label": "append_css_projects",
+			"type": "shell",
+			"command": "echo \"\n.project-tags {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 8px;\n    margin: 10px 0;\n}\n\n.tag {\n    background-color: var(--hover-bg);\n    color: var(--text-color);\n    padding: 4px 8px;\n    border-radius: 4px;\n    font-size: 0.8rem;\n    border: 1px solid var(--border-color);\n}\" >> src/components/Projects/Projects.css"
+		}
+	]
+}

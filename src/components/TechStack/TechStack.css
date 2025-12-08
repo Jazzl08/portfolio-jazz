@@ -1,0 +1,37 @@
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.tech-icon {
+    background: var(--hover-bg);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tech-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease;
+}
+
+.tech-icon:hover img {
+    transform: scale(1.2);
+}
+
+.tech-icon span {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Invert Next.js icon in dark mode if needed, assuming dark theme by default */
+[data-theme='dark'] .nextjs-icon {
+    filter: invert(1);
+}

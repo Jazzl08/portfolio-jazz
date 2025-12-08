@@ -1,0 +1,103 @@
+:root {
+    --bg-color: rgb(8, 8, 8);
+    --text-color: white;
+    --secondary-text: rgb(156, 163, 175);
+    --border-color: rgb(40, 40, 40);
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --accent-color: white;
+    --timeline-line: rgb(40, 40, 40);
+}
+
+[data-theme="light"] {
+    --bg-color: #f3f4f6;
+    --text-color: #111827;
+    --secondary-text: #4b5563;
+    --border-color: #e5e7eb;
+    --hover-bg: rgba(0, 0, 0, 0.05);
+    --accent-color: #111827;
+    --timeline-line: #d1d5db;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+
+.box {
+    width: 100%;
+    max-width: 700px;
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.description {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+}
+
+/* Utilities */
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.icon-btn:hover {
+    background: var(--hover-bg);
+}
+
+.btn-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: var(--hover-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.btn-small:hover {
+    background: var(--border-color);
+    transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}

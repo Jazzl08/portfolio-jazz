@@ -1,0 +1,36 @@
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--timeline-line);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--bg-color);
+    border: 2px solid var(--secondary-text);
+    border-radius: 50%;
+}
+
+.timeline-year {
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+    font-family: monospace;
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
