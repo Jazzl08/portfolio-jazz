@@ -1,0 +1,40 @@
+.view-toggle-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 30px;
+    background: var(--hover-bg);
+    padding: 5px;
+    border-radius: 12px;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: var(--secondary-text);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    flex: 1;
+    font-family: "Nunito", sans-serif;
+}
+
+.toggle-btn:hover {
+    color: var(--text-color);
+}
+
+.toggle-btn.active {
+    background: var(--bg-secondary);
+    color: var(--text-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .toggle-btn.active {
+    background: #ffffff;
+}

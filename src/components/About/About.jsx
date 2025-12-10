@@ -7,12 +7,10 @@ export default function About() {
     
     return (
         <section id="about" className="fade-in">
-            <h1>{translate('section.about')}</h1>
-            <hr />
-            <p className="description">
+            <p className="description about-text">
                 {translate('about.text_1')}
                 <HoverCard>
-                    <HoverCardTrigger>
+                    <HoverCardTrigger className="hover-trigger-white">
                         <b><u>{translate('about.country')}</u></b>
                     </HoverCardTrigger>
                     <HoverCardContent className="p-0">

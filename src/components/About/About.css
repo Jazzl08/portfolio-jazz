@@ -1,3 +1,22 @@
 section {
     margin-bottom: 50px;
 }
+
+.about-text {
+    color: #e5e7eb; /* Lighter than standard secondary text */
+    color: #e5e7eb;
+    font-size: 18px;
+    padding-top: 15px;
+}
+
+[data-theme="light"] .about-text {
+    color: #374151; /* Darker for light mode readability */
+}
+
+.hover-trigger-white {
+    color: #ffffff; /* Pure white */
+}
+
+[data-theme="light"] .hover-trigger-white {
+    color: #000000; /* Pure black for light mode */
+}

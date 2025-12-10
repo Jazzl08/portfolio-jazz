@@ -18,7 +18,7 @@ export const HoverCard = ({ children }) => {
     };
 
     return (
-        <HoverCardContext.Provider value={{ isOpen }}>
+        <HoverCardContext.Provider value={{ isOpen, setIsOpen }}>
             <div 
                 className="hover-card-container" 
                 onMouseEnter={handleMouseEnter} 
@@ -31,8 +31,13 @@ export const HoverCard = ({ children }) => {
 };
 
 export const HoverCardTrigger = ({ children, className }) => {
+    const { isOpen, setIsOpen } = useContext(HoverCardContext);
+    
     return (
-        <span className={`hover-card-trigger ${className || ''}`}>
+        <span 
+            className={`hover-card-trigger ${className || ''}`}
+            onClick={() => setIsOpen(!isOpen)}
+        >
             {children}
         </span>
     );

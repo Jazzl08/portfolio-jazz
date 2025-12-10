@@ -1,5 +1,6 @@
 :root {
     --bg-color: rgb(8, 8, 8);
+    --bg-secondary: rgb(18, 18, 18);
     --text-color: white;
     --secondary-text: rgb(209, 213, 219);
     --border-color: rgb(40, 40, 40);
@@ -10,6 +11,7 @@
 
 [data-theme="light"] {
     --bg-color: #f3f4f6;
+    --bg-secondary: #ffffff;
     --text-color: #111827;
     --secondary-text: #4b5563;
     --border-color: #e5e7eb;

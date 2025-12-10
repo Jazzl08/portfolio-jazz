@@ -33,6 +33,12 @@
     color: var(--text-color);
 }
 
+.tech-badge.icon-only {
+    padding: 6px;
+    border-radius: 50%;
+    justify-content: center;
+}
+
 .tech-badge img {
     width: 16px;
     height: 16px;
@@ -43,3 +49,253 @@
 [data-theme='dark'] .nextjs-icon {
     filter: invert(1);
 }
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+    background-color: #121212; /* Fallback */
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    animation: slideUp 0.3s ease-out;
+    z-index: 10001;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.modal-title h2 {
+    font-size: 1.8rem;
+    margin: 0 0 8px 0;
+    color: var(--text-color);
+}
+
+.modal-title p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.close-button:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal-image-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.modal-features h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+.modal-features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+.modal-features li {
+    margin-bottom: 8px;
+}
+
+.modal-footer {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 12px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Learn More Button */
+.btn-learn-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: "Nunito", sans-serif;
+    transition: all 0.2s ease;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+
+.btn-learn-more:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--text-secondary);
+}
+
+/* Modal Buttons */
+.modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.modal-btn:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--text-secondary);
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+        padding: 20px;
+        /* Force solid background colors for mobile to prevent any transparency issues */
+        background-color: rgb(18, 18, 18); 
+    }
+
+    [data-theme="light"] .modal-content {
+        background-color: #ffffff;
+    }
+
+    .modal-overlay {
+        background-color: rgba(0, 0, 0, 0.95); /* Darker overlay on mobile */
+        backdrop-filter: none; /* Disable blur on mobile for better performance and less transparency artifacts */
+    }
+}
+
+
+/* Project Container Styles - Content Only */
+#projects .timeline-content {
+    background: var(--bg-secondary); /* Darker background, matching theme */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+#projects .timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--secondary-text);
+}
+
+/* Ensure timeline stays visible */
+#projects .timeline {
+    border-left: 2px solid var(--timeline-line);
+    padding-left: 18px;
+    display: block;
+
+}
+
+#projects .timeline-item {
+    background: transparent;
+    border: none;
+    padding: 0 0 30px 20px;
+    margin-bottom: 0;
+    border-radius: 0;
+    overflow: visible;
+}
+
+#projects .timeline-item::before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: -26px; /* Adjusted for timeline padding */
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--bg-color);
+    border: 2px solid var(--secondary-text);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#projects .timeline-year {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 5px;
+    color: var(--secondary-text);
+    font-size: 0.85rem;
+    display: block;
+    font-family: monospace;
+}
+
+#projects .project-img {
+    margin-top: 0;
+    box-shadow: none;
+}
+
