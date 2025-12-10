@@ -59,6 +59,10 @@ export default function Projects() {
                                 <span>React</span>
                             </div>
                             <div className="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" className="nextjs-icon" />
+                                <span>Next.js</span>
+                            </div>
+                            <div className="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
                                 <span>TypeScript</span>
                             </div>

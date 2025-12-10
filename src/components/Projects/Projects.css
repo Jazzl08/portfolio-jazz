@@ -38,7 +38,8 @@
     height: 16px;
 }
 
-/* Invert Three.js icon in dark mode if needed */
-[data-theme='dark'] .threejs-icon {
+/* Invert icons in dark mode if needed */
+[data-theme='dark'] .threejs-icon,
+[data-theme='dark'] .nextjs-icon {
     filter: invert(1);
 }
