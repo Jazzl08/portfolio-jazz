@@ -5,8 +5,7 @@ section {
 .about-text {
     color: #e5e7eb; /* Lighter than standard secondary text */
     color: #e5e7eb;
-    font-size: 18px;
-    padding-top: 15px;
+    font-size: 15px;
 }
 
 [data-theme="light"] .about-text {

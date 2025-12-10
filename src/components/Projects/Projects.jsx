@@ -22,28 +22,6 @@ export default function Projects() {
 
     const projects = [
         {
-            id: 'portfolio',
-            year: '2025',
-            titleKey: 'proj.portfolio.title',
-            descKey: 'proj.portfolio.desc',
-            img: '/portfolio.png',
-            tech: [
-                { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', color: 'rgba(97, 218, 251, 0.1)', borderColor: 'rgba(97, 218, 251, 0.3)' },
-                { name: 'Vite', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg', color: 'rgba(100, 108, 255, 0.1)', borderColor: 'rgba(100, 108, 255, 0.3)' },
-                { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', color: 'rgba(21, 114, 182, 0.1)', borderColor: 'rgba(21, 114, 182, 0.3)' }
-            ],
-            links: {
-                github: 'https://github.com/Jazzl08/portfolio-jazz',
-                demo: '#'
-            },
-            features: [
-                'proj.portfolio.feat1',
-                'proj.portfolio.feat2',
-                'proj.portfolio.feat3',
-                'proj.portfolio.feat4'
-            ]
-        },
-        {
             id: 'stopdeontkoking',
             year: '2025',
             titleKey: 'proj.recipe.title',

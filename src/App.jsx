@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react';
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header/Header';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
 import Projects from './components/Projects/Projects';
 import TechStack from './components/TechStack/TechStack';
-import Tools from './components/Tools/Tools';
 import Contact from './components/Contact/Contact';
 import CommandPalette from './components/CommandPalette/CommandPalette';
 import Footer from './components/Footer/Footer';
-import './App.css'; // Ensure we have styles for the toggle
+import { ProgressiveBlur } from './components/ui/progressive-blur';
+import './App.css';
 
-export default function App() {
+function PortfolioContent() {
+    const { translate } = useLanguage();
     const [isNavigationOpen, setIsNavigationOpen] = useState(false);
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-    const [activeTab, setActiveTab] = useState('projects'); // 'projects' or 'experience'
+    const [activeTab, setActiveTab] = useState('work');
 
     useEffect(() => {
         const observerOptions = {
@@ -33,7 +34,6 @@ export default function App() {
             });
         }, observerOptions);
 
-        // Re-observe when activeTab changes
         setTimeout(() => {
             const sections = document.querySelectorAll('.fade-in');
             sections.forEach(section => {
@@ -45,47 +45,58 @@ export default function App() {
     }, [activeTab]);
 
     return (
+        <main className="box">
+            <ProgressiveBlur position="top" height="100px" className="fixed top-0 z-50 pointer-events-none" />
+            
+            <Header onOpenNavigation={() => setIsNavigationOpen(true)} />
+
+            <About />
+
+            <Projects />
+
+            <div className="view-toggle-container fade-in">
+                <button 
+                    className={`toggle-btn ${activeTab === 'work' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('work')}
+                >
+                    {translate('section.work')}
+                </button>
+                <button 
+                    className={`toggle-btn ${activeTab === 'experience' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('experience')}
+                >
+                    {translate('section.experience')}
+                </button>
+            </div>
+
+            <Experience type={activeTab} />
+            
+            <div className="tech-tools-wrapper fade-in">
+                <TechStack />
+            </div>
+            <Footer />
+
+            <ProgressiveBlur position="bottom" height="100px" className="fixed bottom-0 z-50 pointer-events-none" />
+
+            <Contact
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+            />
+
+            <CommandPalette
+                isOpen={isNavigationOpen}
+                onClose={() => setIsNavigationOpen(false)}
+                onOpenContact={() => setIsContactModalOpen(true)}
+            />
+        </main>
+    );
+}
+
+export default function App() {
+    return (
         <LanguageProvider>
             <ThemeProvider>
-                <main className="box">
-                    <Header onOpenNavigation={() => setIsNavigationOpen(true)} />
-
-                    <About />
-
-                    <div className="view-toggle-container fade-in">
-                        <button 
-                            className={`toggle-btn ${activeTab === 'projects' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('projects')}
-                        >
-                            Projects
-                        </button>
-                        <button 
-                            className={`toggle-btn ${activeTab === 'experience' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('experience')}
-                        >
-                            Experience
-                        </button>
-                    </div>
-
-                    {activeTab === 'projects' ? <Projects /> : <Experience />}
-                    
-                    <TechStack />
-                    <Tools />
-                    <Footer />
-
-
-
-                    <Contact
-                        isOpen={isContactModalOpen}
-                        onClose={() => setIsContactModalOpen(false)}
-                    />
-
-                    <CommandPalette
-                        isOpen={isNavigationOpen}
-                        onClose={() => setIsNavigationOpen(false)}
-                        onOpenContact={() => setIsContactModalOpen(true)}
-                    />
-                </main>
+                <PortfolioContent />
             </ThemeProvider>
         </LanguageProvider>
     );

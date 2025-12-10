@@ -9,10 +9,6 @@ export default function TechStack() {
             <h1>{translate('section.techstack')}</h1>
             <hr />
             <div className="tech-grid">
-                <div className="tech-icon" title="HTML5">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-                    <span>HTML5</span>
-                </div>
                 <div className="tech-icon" title="CSS3">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
                     <span>CSS3</span>
