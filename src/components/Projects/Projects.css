@@ -1,47 +1,133 @@
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.project-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: auto;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--text-secondary);
+}
+
+.project-img-container {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
 .project-img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    border: 1px solid var(--border-color);
     object-fit: cover;
     aspect-ratio: 16/9;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-.project-links {
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.project-header {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-color);
+    font-family: "Nunito", sans-serif;
+}
+
+
+.project-desc {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-family: "Nunito", sans-serif;
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin: 10px 0;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: auto;
 }
 
 .tech-badge {
     display: flex;
     align-items: center;
     gap: 6px;
-    background-color: var(--hover-bg);
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--text-color);
 }
 
 .tech-badge.icon-only {
-    padding: 6px;
+    padding: 8px;
     border-radius: 50%;
     justify-content: center;
 }
 
 .tech-badge img {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
+}
+
+.project-links {
+    display: flex;
+    margin-top: auto;
+}
+
+.btn-project {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    cursor: pointer;
+        font-family: "Nunito", sans-serif;
+}
+
+.btn-project:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--text-secondary);
+    transform: translateY(-2px);
 }
 
 /* Invert icons in dark mode if needed */
@@ -216,6 +302,11 @@
 
 /* Mobile Specific Styles */
 @media (max-width: 768px) {
+    .projects-grid {
+margin: 30px;
+gap: 70px;
+    }
+
     .modal-content {
         width: 95%;
         max-height: 85vh;
@@ -235,67 +326,5 @@
 }
 
 
-/* Project Container Styles - Content Only */
-#projects .timeline-content {
-    background: var(--bg-secondary); /* Darker background, matching theme */
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-}
 
-#projects .timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border-color: var(--secondary-text);
-}
-
-/* Ensure timeline stays visible */
-#projects .timeline {
-    border-left: 2px solid var(--timeline-line);
-    padding-left: 18px;
-    display: block;
-
-}
-
-#projects .timeline-item {
-    background: transparent;
-    border: none;
-    padding: 0 0 30px 20px;
-    margin-bottom: 0;
-    border-radius: 0;
-    overflow: visible;
-}
-
-#projects .timeline-item::before {
-    display: block;
-    content: '';
-    position: absolute;
-    left: -26px; /* Adjusted for timeline padding */
-    top: 5px;
-    width: 10px;
-    height: 10px;
-    background: var(--bg-color);
-    border: 2px solid var(--secondary-text);
-    border-radius: 50%;
-    z-index: 1;
-}
-
-#projects .timeline-year {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin-bottom: 5px;
-    color: var(--secondary-text);
-    font-size: 0.85rem;
-    display: block;
-    font-family: monospace;
-}
-
-#projects .project-img {
-    margin-top: 0;
-    box-shadow: none;
-}
 

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useLanguage } from '@/context/LanguageContext';
-import { Lens } from '@/components/ui/lens';
 import './Projects.css';
 
 export default function Projects() {
@@ -23,7 +22,7 @@ export default function Projects() {
     const projects = [
         {
             id: 'stopdeontkoking',
-            year: '2025',
+            year: 'Januari 2025',
             titleKey: 'proj.recipe.title',
             descKey: 'proj.recipe.desc',
             img: '/stopdeontkoking.png',
@@ -47,7 +46,7 @@ export default function Projects() {
         },
         {
             id: 'mars',
-            year: '2024',
+            year: 'Februari 2024',
             titleKey: 'proj.mars.title',
             descKey: 'proj.mars.desc',
             img: '/mtm.png',
@@ -74,42 +73,39 @@ export default function Projects() {
         <section id="projects" className="fade-in">
             <h1>{translate('section.projects')}</h1>
             <hr />
-            <div className="timeline">
+            <div className="projects-grid">
                 {projects.map((project) => (
-                    <div key={project.id} className="timeline-item">
-                        <div className="timeline-year">{project.year}</div>
-                        <div className="timeline-content">
-                            <Lens>
-                                <img 
-                                    src={project.img} 
-                                    alt={translate(project.titleKey)} 
-                                    className="project-img" 
-                                    onClick={() => setSelectedProject(project)}
-                                    style={{cursor: 'pointer'}}
-                                />
-                            </Lens>
-                            <h3>{translate(project.titleKey)}</h3>
-                            <div className="project-tech">
-                                {project.tech.map((t, i) => (
-                                    <div 
-                                        key={i} 
-                                        className="tech-badge icon-only" 
-                                        title={t.name}
-                                        style={{ 
-                                            backgroundColor: t.color, 
-                                            borderColor: t.borderColor 
-                                        }}
-                                    >
-                                        <img src={t.icon} alt={t.name} className={t.className || ''} />
-                                    </div>
-                                ))}
-                            </div>
-                            <p className="description">{translate(project.descKey)}</p>
-                            <div className="project-links">
-                                <button onClick={() => setSelectedProject(project)} className="btn-learn-more">
-                                    {translate('btn.learn_more')}
-                                </button>
-                            </div>
+                    <div key={project.id} className="project-card">
+                        <div className="project-img-container" onClick={() => setSelectedProject(project)}>
+                            <img 
+                                src={project.img} 
+                                alt={translate(project.titleKey)} 
+                                className="project-img" 
+                            />
+                        </div>
+                        <div className="project-header">
+                            <h3 className="project-title">{translate(project.titleKey)}</h3>
+                        </div>
+                        <p className="project-desc">{translate(project.descKey)}</p>
+                        <div className="project-tech">
+                            {project.tech.map((t, i) => (
+                                <div 
+                                    key={i} 
+                                    className="tech-badge icon-only" 
+                                    title={t.name}
+                                    style={{ 
+                                        backgroundColor: t.color, 
+                                        borderColor: t.borderColor 
+                                    }}
+                                >
+                                    <img src={t.icon} alt={t.name} className={t.className || ''} />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="project-links">
+                            <button onClick={() => setSelectedProject(project)} className="btn-project">
+                                {translate('btn.learn_more')}
+                            </button>
                         </div>
                     </div>
                 ))}
