@@ -21,11 +21,40 @@ export default function Projects() {
 
     const projects = [
         {
+            id: 'yumeramen',
+            year: '2026',
+            titleKey: 'proj.yumeramen.title',
+            descKey: 'proj.yumeramen.desc',
+            img: '/yume-ramen.png',
+            listIcon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="project-list-icon"><path d="M3 2v9c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2"/><path d="M9 2v9c0 .6.4 1 1 1h4a1 1 0 0 0 1-1V2"/><path d="M19 2v9c0 1.1-.9 2-2 2h-2a2 2 0 0 0-2-2V2"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+            ),
+            tech: [
+                { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', color: 'rgba(247, 223, 30, 0.1)', borderColor: 'rgba(247, 223, 30, 0.3)' },
+                { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', color: 'rgba(97, 218, 251, 0.1)', borderColor: 'rgba(97, 218, 251, 0.3)' },
+                { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', color: 'rgba(104, 160, 99, 0.1)', borderColor: 'rgba(104, 160, 99, 0.3)' },
+                { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', color: 'rgba(0, 0, 0, 0.1)', borderColor: 'rgba(0, 0, 0, 0.3)', className: 'express-icon' },
+                { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', color: 'rgba(51, 103, 145, 0.1)', borderColor: 'rgba(51, 103, 145, 0.3)' },
+                { name: 'Zod', icon: './public/icon.png', color: 'rgba(48, 104, 183, 0.1)', borderColor: 'rgba(48, 104, 183, 0.3)' },
+                { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', color: 'rgba(38, 77, 228, 0.1)', borderColor: 'rgba(38, 77, 228, 0.3)' }
+            ],
+            links: {
+                github: '#',
+                demo: '#'
+            },
+            features: [
+                'Coming soon'
+            ]
+        },
+        {
             id: 'stopdeontkoking',
             year: 'Januari 2025',
             titleKey: 'proj.recipe.title',
             descKey: 'proj.recipe.desc',
             img: '/stopdeontkoking.png',
+            listIcon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="project-list-icon"><path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.55a2 2 0 0 1 2.43 1.45l.45 1.81"/></svg>
+            ),
             tech: [
                 { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', color: 'rgba(51, 103, 145, 0.1)', borderColor: 'rgba(51, 103, 145, 0.3)' },
                 { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', color: 'rgba(97, 218, 251, 0.1)', borderColor: 'rgba(97, 218, 251, 0.3)' },
@@ -51,6 +80,7 @@ export default function Projects() {
             descKey: 'proj.mars.desc',
             img: '/mtm.png',
             tech: [
+                { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', color: 'rgba(247, 223, 30, 0.1)', borderColor: 'rgba(247, 223, 30, 0.3)' },
                 { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', color: 'rgba(97, 218, 251, 0.1)', borderColor: 'rgba(97, 218, 251, 0.3)' },
                 { name: 'Tailwind', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg', color: 'rgba(6, 182, 212, 0.1)', borderColor: 'rgba(6, 182, 212, 0.3)' },
                 { name: 'Vite', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg', color: 'rgba(100, 108, 255, 0.1)', borderColor: 'rgba(100, 108, 255, 0.3)' },
@@ -75,37 +105,25 @@ export default function Projects() {
             <hr />
             <div className="projects-grid">
                 {projects.map((project) => (
-                    <div key={project.id} className="project-card">
-                        <div className="project-img-container" onClick={() => setSelectedProject(project)}>
-                            <img 
-                                src={project.img} 
-                                alt={translate(project.titleKey)} 
-                                className="project-img" 
-                            />
-                        </div>
-                        <div className="project-header">
+                    <div key={project.id} className="project-card" onClick={() => setSelectedProject(project)}>
+                        <div className="project-content">
                             <h3 className="project-title">{translate(project.titleKey)}</h3>
-                        </div>
-                        <p className="project-desc">{translate(project.descKey)}</p>
-                        <div className="project-tech">
-                            {project.tech.map((t, i) => (
-                                <div 
-                                    key={i} 
-                                    className="tech-badge icon-only" 
-                                    title={t.name}
-                                    style={{ 
-                                        backgroundColor: t.color, 
-                                        borderColor: t.borderColor 
-                                    }}
-                                >
-                                    <img src={t.icon} alt={t.name} className={t.className || ''} />
-                                </div>
-                            ))}
-                        </div>
-                        <div className="project-links">
-                            <button onClick={() => setSelectedProject(project)} className="btn-project">
-                                {translate('btn.learn_more')}
-                            </button>
+                            <p className="project-desc">{translate(project.descKey)}</p>
+                            <div className="project-tech">
+                                {project.tech.map((t, i) => (
+                                    <div 
+                                        key={i} 
+                                        className="tech-badge"
+                                        style={{ 
+                                            backgroundColor: 'rgba(255, 255, 255, 0.03)', 
+                                            borderColor: t.borderColor 
+                                        }}
+                                        title={t.name}
+                                    >
+                                        <img src={t.icon} alt={t.name} className={t.className || ''} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 ))}
