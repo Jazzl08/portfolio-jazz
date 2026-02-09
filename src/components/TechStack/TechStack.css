@@ -1,28 +1,31 @@
 .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .tech-icon {
-    background: var(--hover-bg);
-    border-radius: 12px;
-    padding: 15px;
+    background: transparent;
+    border-radius: 9999px;
+    padding: 8px 16px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
 }
 
 .tech-icon img {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     transition: transform 0.2s ease;
 }
 
 .tech-icon:hover img {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .tech-icon span {

@@ -45,9 +45,9 @@ export default function TechStack() {
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
                     <span>MySQL</span>
                 </div>
-                <div className="tech-icon" title="TypeScript">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
-                    <span>TypeScript</span>
+                <div className="tech-icon" title="Express.js">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" className="express-icon" />
+                    <span>Express.js</span>
                 </div>
                 <div className="tech-icon" title="Sass">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Sass" />
