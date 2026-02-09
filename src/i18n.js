@@ -1,6 +1,6 @@
 export const translations = {
     en: {
-        role: "Full Stack Developer",
+        role: "Software Development<br/>Student",
         "about.text_1": "Hello I am Jazz lens, a 17 year old Creative Software Development student based in the ",
         "about.country": "Netherlands",
         "about.text_2": ". I’m learning my way into becoming a Full Stack Developer. I am always experimenting, breaking stuff, and fixing it again.",
@@ -63,7 +63,7 @@ export const translations = {
         "nav.close": "close"
     },
     nl: {
-        role: "Full Stack Developer",
+        role: "Software Development<br/>Student",
         "about.text_1": "Hallo, ik ben Jazz Lens, een 17-jarige student Creative Software Development in ",
         "about.country": "Nederland",
         "about.text_2": ". Ik leer om een Full Stack Developer te worden. Ik ben altijd aan het experimenteren, dingen stukmaken en weer repareren.",
@@ -126,7 +126,7 @@ export const translations = {
         "nav.close": "sluiten"
     },
     id: {
-        role: "Pengembang Full Stack",
+        role: "Siswa Pengembangan<br/>Perangkat Lunak",
         "about.text_1": "Halo, saya Jazz Lens, seorang siswa Pengembangan Perangkat Lunak Kreatif berusia 17 tahun yang berbasis di ",
         "about.country": "Belanda",
         "about.text_2": ". Saya sedang belajar untuk menjadi Pengembang Full Stack. Saya selalu bereksperimen, merusak sesuatu, dan memperbaikinya lagi.",

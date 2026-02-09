@@ -1,7 +1,7 @@
 .timeline {
     position: relative;
     padding-left: 17px;
-    border-left: 2px solid var(--timeline-line);
+    /* border-left: 2px solid var(--timeline-line); */
 }
 
 .timeline-item {
@@ -45,7 +45,7 @@
 }
 
 .timeline-year {
-    font-size: 0.85rem;
+    font-size: inherit;
     color: var(--secondary-text);
     margin-bottom: 5px;
     font-family: monospace;
@@ -53,7 +53,7 @@
 
 .timeline-content h3 {
     margin: 0 0 5px 0;
-    font-size: 1rem;
+    font-size: inherit;
     color: var(--text-color);
 }
 

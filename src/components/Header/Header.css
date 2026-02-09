@@ -16,21 +16,21 @@
 .profile-img {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 50px;
     object-fit: cover;
 }
 
 .info h2 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: medium;
     margin-bottom: 2px;
     color: var(--text-color);
 }
 
 .role {
     margin: 0;
-    color: var(--secondary-text);
-    font-size: 1.1rem;
+    color: #bbbbbb; 
+    font-size: inherit;
 }
 
 .social-icons {
@@ -91,7 +91,7 @@
     cursor: pointer;
     border-radius: 4px;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: inherit;
     font-family: inherit;
 }
 
@@ -132,7 +132,7 @@
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: inherit;
     font-family: "Nunito", sans-serif;
     text-decoration: none;
     transition: all 0.2s ease;

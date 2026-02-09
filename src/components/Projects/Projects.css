@@ -68,7 +68,7 @@
 }
 
 .project-title {
-    font-size: 1rem;
+    font-size: inherit;
     font-weight: 600;
     margin: 0;
     color: var(--text-color);
@@ -76,10 +76,10 @@
 }
 
 .project-desc {
-    color: var(--secondary-text);
+    color: #bbbbbb;
     margin: 0;
     line-height: 1.5;
-    font-size: 0.9rem;
+    font-size: inherit;
     font-family: inherit;
 }
 
@@ -97,7 +97,7 @@
     padding: 4px 10px;
     border-radius: 6px;
     border: 1px solid;
-    font-size: 0.75rem;
+    font-size: inherit;
     font-weight: 500;
     color: var(--text-color);
     background-color: rgba(255, 255, 255, 0.03);
@@ -114,7 +114,9 @@
 }
 
 /* Invert icons in dark mode if needed */
-.express-icon {
+.express-icon,
+.nextjs-icon,
+.threejs-icon {
     filter: invert(1);
 }
 

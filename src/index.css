@@ -9,21 +9,11 @@
     --timeline-line: rgb(40, 40, 40);
 }
 
-[data-theme="light"] {
-    --bg-color: #f3f4f6;
-    --bg-secondary: #ffffff;
-    --text-color: #111827;
-    --secondary-text: #4b5563;
-    --border-color: #e5e7eb;
-    --hover-bg: rgba(0, 0, 0, 0.05);
-    --accent-color: #111827;
-    --timeline-line: #d1d5db;
-}
-
 body {
     font-family: "Nunito", sans-serif;
     background: var(--bg-color);
-    color: var(--text-color);
+    color: #bbbbbb;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     min-height: 100vh;
@@ -38,10 +28,14 @@ body {
     max-width: 700px;
 }
 
-h1 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
+    font-size: inherit;
+}
+
+h1 {
+    font-size: inherit;
+    margin-bottom: 10px;
 }
 
 hr {
@@ -52,8 +46,8 @@ hr {
 
 .description {
     line-height: 1.6;
-    font-size: 0.95rem;
-    color: var(--secondary-text);
+    /* font-size: 0.95rem; */
+    /* color: var(--secondary-text); */
 }
 
 /* Utilities */

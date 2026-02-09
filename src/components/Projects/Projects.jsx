@@ -35,7 +35,7 @@ export default function Projects() {
                 { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', color: 'rgba(104, 160, 99, 0.1)', borderColor: 'rgba(104, 160, 99, 0.3)' },
                 { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', color: 'rgba(0, 0, 0, 0.1)', borderColor: 'rgba(0, 0, 0, 0.3)', className: 'express-icon' },
                 { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', color: 'rgba(51, 103, 145, 0.1)', borderColor: 'rgba(51, 103, 145, 0.3)' },
-                { name: 'Zod', icon: './public/icon.png', color: 'rgba(48, 104, 183, 0.1)', borderColor: 'rgba(48, 104, 183, 0.3)' },
+                { name: 'Zod', icon: '/zod_logo.png', color: 'rgba(48, 104, 183, 0.1)', borderColor: 'rgba(48, 104, 183, 0.3)' },
                 { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', color: 'rgba(38, 77, 228, 0.1)', borderColor: 'rgba(38, 77, 228, 0.3)' }
             ],
             links: {

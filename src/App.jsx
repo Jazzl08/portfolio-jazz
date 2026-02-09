@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
-import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header/Header';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
@@ -95,9 +94,7 @@ function PortfolioContent() {
 export default function App() {
     return (
         <LanguageProvider>
-            <ThemeProvider>
-                <PortfolioContent />
-            </ThemeProvider>
+            <PortfolioContent />
         </LanguageProvider>
     );
 }
