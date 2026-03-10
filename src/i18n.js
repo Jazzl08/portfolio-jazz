@@ -1,10 +1,8 @@
 export const translations = {
     en: {
-        role: "Software Development<br/>Student",
-        "about.text_1": "Hello I am Jazz lens, a 17 year old Creative Software Development student based in the ",
-        "about.country": "Netherlands",
-        "about.text_2": ". I’m learning my way into becoming a Full Stack Developer. I am always experimenting, breaking stuff, and fixing it again.",
-        "section.about": "About Me",
+        role: "Software Developer Student",
+        "about.text": "Hi, I am Jazz Lens, 17 years old. I am a student at GLR and I want to become a full-stack web and app developer. I enjoy building clean interfaces, learning new technologies, and turning ideas into practical projects that people can actually use.",
+        "section.about": "About",
         "section.work": "Work",
         "section.experience": "Experience",
         "exp.school.title": "Creative Software Development",
@@ -41,7 +39,7 @@ export const translations = {
         "btn.github": "GitHub",
         "btn.live_demo": "Live Demo",
         "modal.features": "Features",
-        "section.techstack": "What I work with",
+        "section.techstack": "Tech Stack",
         "section.tools": "Tools I use",
         "contact.title": "Contact",
         "contact.desc": "I would like to work with you...",
@@ -63,10 +61,8 @@ export const translations = {
         "nav.close": "close"
     },
     nl: {
-        role: "Software Development<br/>Student",
-        "about.text_1": "Hallo, ik ben Jazz Lens, een 17-jarige student Creative Software Development in ",
-        "about.country": "Nederland",
-        "about.text_2": ". Ik leer om een Full Stack Developer te worden. Ik ben altijd aan het experimenteren, dingen stukmaken en weer repareren.",
+        role: "Software Developer Student",
+        "about.text": "Hoi, ik ben Jazz Lens, 17 jaar oud. Ik ben student op het GLR en ik wil fullstack web- of app-developer worden. Ik vind het leuk om nette interfaces te bouwen, nieuwe technologieen te leren en ideeen om te zetten in praktische projecten die mensen echt kunnen gebruiken.",
         "section.about": "Over Mij",
         "section.work": "Werk",
         "section.experience": "Ervaring",
@@ -126,10 +122,8 @@ export const translations = {
         "nav.close": "sluiten"
     },
     id: {
-        role: "Siswa Pengembangan<br/>Perangkat Lunak",
-        "about.text_1": "Halo, saya Jazz Lens, seorang siswa Pengembangan Perangkat Lunak Kreatif berusia 17 tahun yang berbasis di ",
-        "about.country": "Belanda",
-        "about.text_2": ". Saya sedang belajar untuk menjadi Pengembang Full Stack. Saya selalu bereksperimen, merusak sesuatu, dan memperbaikinya lagi.",
+        role: "Siswa Pengembangan Perangkat Lunak",
+        "about.text": "Halo, saya Jazz Lens, 17 tahun. Saya siswa di GLR dan ingin menjadi pengembang web dan aplikasi full-stack. Saya senang membuat antarmuka yang rapi, mempelajari teknologi baru, dan mengubah ide menjadi proyek praktis yang benar-benar berguna.",
         "section.about": "Tentang Saya",
         "section.work": "Pekerjaan",
         "section.experience": "Pengalaman",

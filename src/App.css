@@ -5,7 +5,7 @@
     margin-bottom: 30px;
     background: var(--hover-bg);
     padding: 5px;
-    border-radius: 12px;
+    border-radius: 14px;
     width: 100%;
     border: 1px solid var(--border-color);
     box-sizing: border-box;
@@ -20,9 +20,9 @@
     cursor: pointer;
     font-size: inherit;
     transition: all 0.2s ease;
-    font-weight: 600;
+    font-weight: 500;
     flex: 1;
-    font-family: "Nunito", sans-serif;
+    font-family: inherit;
 }
 
 .toggle-btn:hover {
@@ -33,6 +33,7 @@
     background: var(--bg-secondary);
     color: var(--text-color);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
 }
 
 .tech-tools-wrapper {

@@ -1,7 +1,7 @@
 .timeline {
     position: relative;
     padding-left: 17px;
-    /* border-left: 2px solid var(--timeline-line); */
+    border-left: 1px solid var(--timeline-line);
 }
 
 .timeline-item {
@@ -48,13 +48,18 @@
     font-size: inherit;
     color: var(--secondary-text);
     margin-bottom: 5px;
-    font-family: monospace;
+    font-family: inherit;
 }
 
 .timeline-content h3 {
     margin: 0 0 5px 0;
     font-size: inherit;
     color: var(--text-color);
+    font-family: inherit;
+}
+
+.timeline-content .description {
+    font-family: inherit;
 }
 
 

@@ -1,28 +1,13 @@
-import { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import './Projects.css';
 
 export default function Projects() {
     const { translate } = useLanguage();
-    const [selectedProject, setSelectedProject] = useState(null);
-
-    // Lock body scroll when modal is open
-    useEffect(() => {
-        if (selectedProject) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
-    }, [selectedProject]);
 
     const projects = [
         {
             id: 'yumeramen',
-            year: '2026',
+            year: 'Februari 2026',
             titleKey: 'proj.yumeramen.title',
             descKey: 'proj.yumeramen.desc',
             img: '/yume-ramen.png',
@@ -102,12 +87,28 @@ export default function Projects() {
     return (
         <section id="projects" className="fade-in">
             <h1>{translate('section.projects')}</h1>
-            <hr />
             <div className="projects-grid">
                 {projects.map((project) => (
-                    <div key={project.id} className="project-card" onClick={() => setSelectedProject(project)}>
+                    <article key={project.id} className="project-card">
+                        <span className="project-year">{project.year}</span>
                         <div className="project-content">
-                            <h3 className="project-title">{translate(project.titleKey)}</h3>
+                            <div className="project-header">
+                                <h3 className="project-title">
+                                    {project.links.github !== '#' ? (
+                                        <a
+                                            href={project.links.github}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="project-title-link"
+                                        >
+                                            <span className="project-title-text">{translate(project.titleKey)}</span>
+                                            <span className="project-title-arrow">↗</span>
+                                        </a>
+                                    ) : (
+                                        <span>{translate(project.titleKey)}</span>
+                                    )}
+                                </h3>
+                            </div>
                             <p className="project-desc">{translate(project.descKey)}</p>
                             <div className="project-tech">
                                 {project.tech.map((t, i) => (
@@ -121,74 +122,14 @@ export default function Projects() {
                                         title={t.name}
                                     >
                                         <img src={t.icon} alt={t.name} className={t.className || ''} />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {selectedProject && createPortal(
-                <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-                    <div className="modal-content" onClick={e => e.stopPropagation()}>
-                        <div className="modal-header">
-                            <div className="modal-title">
-                                <h2>{translate(selectedProject.titleKey)}</h2>
-                                <p>{translate(selectedProject.descKey)}</p>
-                            </div>
-                            <button className="close-button" onClick={() => setSelectedProject(null)}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                            </button>
-                        </div>
-
-                        <div className="modal-body">
-                            <div className="project-tech">
-                                {selectedProject.tech.map((t, i) => (
-                                    <div 
-                                        key={i} 
-                                        className="tech-badge"
-                                        style={{ 
-                                            backgroundColor: t.color, 
-                                            borderColor: t.borderColor 
-                                        }}
-                                    >
-                                        <img src={t.icon} alt={t.name} className={t.className || ''} />
                                         <span>{t.name}</span>
                                     </div>
                                 ))}
                             </div>
-
-                            <div className="modal-image-container">
-                                <img src={selectedProject.img} alt={translate(selectedProject.titleKey)} className="modal-image" />
-                            </div>
-
-                            <div className="modal-features">
-                                <h3>{translate('modal.features')}</h3>
-                                <ul>
-                                    {selectedProject.features.map((featureKey, index) => (
-                                        <li key={index}>{translate(featureKey)}</li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div className="modal-footer">
-                                <a href={selectedProject.links.github} target="_blank" className="modal-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                    {translate('btn.github')}
-                                </a>
-                                <a href={selectedProject.links.demo} target="_blank" className="modal-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                    {translate('btn.live_demo')}
-                                </a>
-                            </div>
                         </div>
-                    </div>
-                </div>,
-                document.body
-            )}
-            <br />
-            <hr />
+                    </article>
+                ))}
+            </div>
         </section>
     );
 }

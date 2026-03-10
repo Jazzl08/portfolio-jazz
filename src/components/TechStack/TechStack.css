@@ -6,7 +6,7 @@
 }
 
 .tech-icon {
-    background: transparent;
+    background: var(--hover-bg);
     border-radius: 9999px;
     padding: 8px 16px;
     display: flex;
@@ -16,6 +16,8 @@
     gap: 10px;
     border: 1px solid var(--border-color);
     transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
 }
 
 .tech-icon img {

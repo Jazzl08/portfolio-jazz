@@ -1,26 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
 :root {
-    --bg-color: rgb(8, 8, 8);
-    --bg-secondary: rgb(18, 18, 18);
-    --text-color: white;
-    --secondary-text: rgb(209, 213, 219);
-    --border-color: rgb(40, 40, 40);
-    --hover-bg: rgba(255, 255, 255, 0.1);
-    --accent-color: white;
-    --timeline-line: rgb(40, 40, 40);
+    --bg-color: #000000;
+    --bg-secondary: #0a0a0a;
+    --text-color: #ffffff;
+    --secondary-text: #d2d2d2;
+    --border-color: #1f1f1f;
+    --hover-bg: #121212;
+    --accent-color: #ffffff;
+    --timeline-line: #2a2a2a;
 }
 
 body {
-    font-family: "Nunito", sans-serif;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background: var(--bg-color);
-    color: #bbbbbb;
+    color: var(--secondary-text);
     font-size: 14px;
     display: flex;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    padding: 40px 20px;
+    padding: 18px 20px 32px;
     transition: background 0.3s, color 0.3s;
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }
 
 .box {
@@ -30,22 +41,28 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
-    font-size: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 
 h1 {
-    font-size: inherit;
-    margin-bottom: 10px;
+    font-size: 1.24rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+p {
+    margin: 0 0 8px 0;
 }
 
 hr {
-    border: none;
-    border-top: 1px solid var(--border-color);
-    margin-bottom: 20px;
+    display: none;
 }
 
 .description {
     line-height: 1.6;
+    margin-bottom: 8px;
     /* font-size: 0.95rem; */
     /* color: var(--secondary-text); */
 }
@@ -57,7 +74,8 @@ hr {
     color: var(--text-color);
     width: 40px;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 1px solid transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,6 +85,7 @@ hr {
 
 .icon-btn:hover {
     background: var(--hover-bg);
+    border-color: var(--border-color);
 }
 
 .btn-small {

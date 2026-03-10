@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
+import gsap from 'gsap';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import Header from './components/Header/Header';
 import About from './components/About/About';
-import Experience from './components/Experience/Experience';
 import Projects from './components/Projects/Projects';
 import TechStack from './components/TechStack/TechStack';
 import Contact from './components/Contact/Contact';
 import CommandPalette from './components/CommandPalette/CommandPalette';
+import WorkExperienceModal from './components/WorkExperienceModal/WorkExperienceModal';
 import Footer from './components/Footer/Footer';
 import { ProgressiveBlur } from './components/ui/progressive-blur';
 import './App.css';
 
 function PortfolioContent() {
-    const { translate } = useLanguage();
     const [isNavigationOpen, setIsNavigationOpen] = useState(false);
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-    const [activeTab, setActiveTab] = useState('work');
+    const [isWorkExperienceModalOpen, setIsWorkExperienceModalOpen] = useState(false);
 
     useEffect(() => {
         const observerOptions = {
@@ -40,8 +40,44 @@ function PortfolioContent() {
             });
         }, 100);
 
-        return () => observer.disconnect();
-    }, [activeTab]);
+        gsap.set('.top-row, #about, .project-card, .tech-icon', {
+            opacity: 0,
+            y: 12
+        });
+
+        gsap.set('.tech-icon', {
+            y: 8
+        });
+
+        const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+        tl.to('.top-row', {
+            opacity: 1,
+            y: 0,
+            duration: 0.45
+        })
+            .to('#about', {
+                opacity: 1,
+                y: 0,
+                duration: 0.4
+            }, '-=0.2')
+            .to('.project-card', {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+                duration: 0.38
+            }, '-=0.15')
+            .to('.tech-icon', {
+                opacity: 1,
+                y: 0,
+                stagger: 0.07,
+                duration: 0.3
+            }, '-=0.2');
+
+        return () => {
+            observer.disconnect();
+            tl.kill();
+        };
+    }, []);
 
     return (
         <main className="box">
@@ -52,23 +88,6 @@ function PortfolioContent() {
             <About />
 
             <Projects />
-
-            <div className="view-toggle-container fade-in">
-                <button 
-                    className={`toggle-btn ${activeTab === 'work' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('work')}
-                >
-                    {translate('section.work')}
-                </button>
-                <button 
-                    className={`toggle-btn ${activeTab === 'experience' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('experience')}
-                >
-                    {translate('section.experience')}
-                </button>
-            </div>
-
-            <Experience type={activeTab} />
             
             <div className="tech-tools-wrapper fade-in">
                 <TechStack />
@@ -82,10 +101,16 @@ function PortfolioContent() {
                 onClose={() => setIsContactModalOpen(false)}
             />
 
+            <WorkExperienceModal
+                isOpen={isWorkExperienceModalOpen}
+                onClose={() => setIsWorkExperienceModalOpen(false)}
+            />
+
             <CommandPalette
                 isOpen={isNavigationOpen}
                 onClose={() => setIsNavigationOpen(false)}
                 onOpenContact={() => setIsContactModalOpen(true)}
+                onOpenWorkExperience={() => setIsWorkExperienceModalOpen(true)}
             />
         </main>
     );
