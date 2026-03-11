@@ -12,6 +12,19 @@ import Footer from './components/Footer/Footer';
 import { ProgressiveBlur } from './components/ui/progressive-blur';
 import './App.css';
 
+function ResumeButton() {
+    const { translate } = useLanguage();
+    
+    return (
+        <a href="/CV_Jazz_Lens_Resume.pdf" download className="resume-btn" aria-label={translate('btn.resume')} title={translate('btn.resume')}>
+            <span className="resume-icons">
+                <svg className="resume-file-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            </span>
+            <span className="resume-tooltip">Download Resume</span>
+        </a>
+    );
+}
+
 function PortfolioContent() {
     const [isNavigationOpen, setIsNavigationOpen] = useState(false);
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -112,6 +125,8 @@ function PortfolioContent() {
                 onOpenContact={() => setIsContactModalOpen(true)}
                 onOpenWorkExperience={() => setIsWorkExperienceModalOpen(true)}
             />
+            
+            <ResumeButton />
         </main>
     );
 }

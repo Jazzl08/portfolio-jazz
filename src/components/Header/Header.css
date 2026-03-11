@@ -5,6 +5,8 @@
     padding: 5px 0;
     margin-bottom: 30px;
     padding-top: 16px;
+    position: relative;
+    z-index: 1000;
 }
 
 .left {
@@ -78,6 +80,7 @@
 
 .dropdown-container {
     position: relative;
+    z-index: 200;
 }
 
 .icons-row .icon-btn {
@@ -113,11 +116,13 @@
     border-radius: 8px;
     padding: 8px;
     min-width: 150px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    z-index: 3000;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .dropdown-menu button {
@@ -166,8 +171,8 @@
     align-items: center;
     justify-content: center;
     position: fixed !important;
-    right: 0 !important;
-    bottom: 0 !important;
+    right: 20px !important;
+    bottom: 20px !important;
     left: auto !important;
     top: auto !important;
     z-index: 2200;
@@ -230,8 +235,8 @@
 
 @media (max-width: 768px) {
     .resume-btn {
-        right: 0 !important;
-        bottom: 0 !important;
+        right: 20px !important;
+        bottom: 20px !important;
         width: 58px;
         height: 58px;
     }

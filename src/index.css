@@ -24,7 +24,8 @@ body {
     margin: 0;
     padding: 18px 20px 32px;
     transition: background 0.3s, color 0.3s;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
