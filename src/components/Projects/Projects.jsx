@@ -15,6 +15,7 @@ export default function Projects() {
     const projects = [
         {
             id: 'notetaker',
+            logo: '/tbh-logo.png',
             year: 'Oktober 2026',
             titleKey: 'proj.notetaker.title',
             descKey: 'proj.notetaker.desc',
@@ -25,6 +26,7 @@ export default function Projects() {
         },
         {
             id: 'crm',
+            logo: '/tbh-logo.png',
             year: 'September 2026',
             titleKey: 'proj.crm.title',
             descKey: 'proj.crm.desc',
@@ -41,6 +43,7 @@ export default function Projects() {
         },
         {
             id: 'clientportal',
+            logo: '/tbh-logo.png',
             year: 'September 2026',
             titleKey: 'proj.clientportal.title',
             descKey: 'proj.clientportal.desc',
@@ -57,6 +60,7 @@ export default function Projects() {
         },
         {
             id: 'thebalihouses',
+            logo: '/tbh-logo.png',
             year: 'September 2026',
             titleKey: 'proj.tbh.title',
             descKey: 'proj.tbh.desc',
@@ -159,6 +163,11 @@ export default function Projects() {
                         <div className="project-content">
                             <div className="project-header">
                                 <h3 className="project-title">
+                                    {project.logo && (
+                                        <span className="project-logo">
+                                            <img src={project.logo} alt="The Bali Houses" />
+                                        </span>
+                                    )}
                                     <span>{translate(project.titleKey)}</span>
                                     {project.links.github !== '#' && (
                                         <a
