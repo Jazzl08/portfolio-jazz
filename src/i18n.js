@@ -1,7 +1,7 @@
 export const translations = {
     en: {
         role: "Software Developer Student",
-        "about.text": "Hi, I am Jazz Lens, 18 years old. I am a student at GLR and I want to become a full-stack web and app developer. I enjoy building clean interfaces, learning new technologies, and turning ideas into practical projects that people can actually use.",
+        "about.text": "Hi, I am Jazz Lens, 18 years old. I am a student at GLR and I want to become a software engineer. I enjoy building clean interfaces, learning new technologies, and turning ideas into practical projects that people can actually use.",
         "section.about": "About",
         "section.work": "Work",
         "section.experience": "Experience",
@@ -48,6 +48,7 @@ export const translations = {
         "proj.mars.feat3": "Responsive Layout",
         "proj.mars.feat4": "Space Data Integration",
         "btn.learn_more": "View Project",
+        "notice.resume": "Resume is downloading...",
         "btn.resume": "Resume",
         "btn.github": "GitHub",
         "btn.live_demo": "Live Demo",
@@ -75,7 +76,7 @@ export const translations = {
     },
     nl: {
         role: "Software Developer Student",
-        "about.text": "Hoi, ik ben Jazz Lens, 18 jaar oud. Ik ben student op het GLR en ik wil fullstack web- of app-developer worden. Ik vind het leuk om nette interfaces te bouwen, nieuwe technologieen te leren en ideeen om te zetten in praktische projecten die mensen echt kunnen gebruiken.",
+        "about.text": "Hoi, ik ben Jazz Lens, 18 jaar oud. Ik ben student op het GLR en ik wil software engineer worden. Ik vind het leuk om nette interfaces te bouwen, nieuwe technologieen te leren en ideeen om te zetten in praktische projecten die mensen echt kunnen gebruiken.",
         "section.about": "Over Mij",
         "section.work": "Werk",
         "section.experience": "Ervaring",
@@ -122,6 +123,7 @@ export const translations = {
         "proj.mars.feat3": "Responsieve Lay-out",
         "proj.mars.feat4": "Ruimte Data Integratie",
         "btn.learn_more": "Bekijk Project",
+        "notice.resume": "CV wordt gedownload...",
         "btn.resume": "Resume",
         "btn.github": "GitHub",
         "btn.live_demo": "Live Demo",
