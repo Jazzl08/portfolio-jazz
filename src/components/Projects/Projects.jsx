@@ -4,7 +4,68 @@ import './Projects.css';
 export default function Projects() {
     const { translate } = useLanguage();
 
+    const dev = (name, slug, color, extra = {}) => ({
+        name,
+        icon: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`,
+        color: `rgba(${color}, 0.1)`,
+        borderColor: `rgba(${color}, 0.3)`,
+        ...extra
+    });
+
     const projects = [
+        {
+            id: 'notetaker',
+            year: 'Oktober 2026',
+            titleKey: 'proj.notetaker.title',
+            descKey: 'proj.notetaker.desc',
+            tech: [],
+            links: { github: '#', demo: '#' },
+            features: []
+        },
+        {
+            id: 'crm',
+            year: 'September 2026',
+            titleKey: 'proj.crm.title',
+            descKey: 'proj.crm.desc',
+            tech: [
+                dev('NestJS', 'nestjs', '224, 35, 66'),
+                dev('Prisma', 'prisma', '90, 103, 216', { className: 'nextjs-icon' }),
+                dev('PostgreSQL', 'postgresql', '51, 103, 145'),
+                dev('Next.js', 'nextjs', '128, 128, 128', { className: 'nextjs-icon' }),
+                dev('React', 'react', '97, 218, 251')
+            ],
+            links: { github: '#', demo: '#' },
+            features: []
+        },
+        {
+            id: 'clientportal',
+            year: 'September 2026',
+            titleKey: 'proj.clientportal.title',
+            descKey: 'proj.clientportal.desc',
+            tech: [
+                dev('NestJS', 'nestjs', '224, 35, 66'),
+                dev('Prisma', 'prisma', '90, 103, 216', { className: 'nextjs-icon' }),
+                dev('PostgreSQL', 'postgresql', '51, 103, 145'),
+                dev('Next.js', 'nextjs', '128, 128, 128', { className: 'nextjs-icon' }),
+                dev('TypeScript', 'typescript', '49, 120, 198')
+            ],
+            links: { github: '#', demo: '#' },
+            features: []
+        },
+        {
+            id: 'thebalihouses',
+            year: 'September 2026',
+            titleKey: 'proj.tbh.title',
+            descKey: 'proj.tbh.desc',
+            tech: [
+                dev('Next.js', 'nextjs', '128, 128, 128', { className: 'nextjs-icon' }),
+                dev('TypeScript', 'typescript', '49, 120, 198'),
+                dev('Tailwind', 'tailwindcss', '6, 182, 212'),
+                dev('Supabase', 'supabase', '62, 207, 142')
+            ],
+            links: { github: '#', demo: 'https://thebalihouses.com' },
+            features: []
+        },
         {
             id: 'yumeramen',
             year: 'Februari 2026',
@@ -25,7 +86,7 @@ export default function Projects() {
             ],
             links: {
                 github: '#',
-                demo: '#'
+                demo: 'https://frontend-2emq.onrender.com/'
             },
             features: [
                 'Coming soon'
@@ -94,9 +155,9 @@ export default function Projects() {
                         <div className="project-content">
                             <div className="project-header">
                                 <h3 className="project-title">
-                                    {project.links.github !== '#' ? (
+                                    {(project.links.github !== '#' || project.links.demo !== '#') ? (
                                         <a
-                                            href={project.links.github}
+                                            href={project.links.github !== '#' ? project.links.github : project.links.demo}
                                             target="_blank"
                                             rel="noreferrer"
                                             className="project-title-link"
