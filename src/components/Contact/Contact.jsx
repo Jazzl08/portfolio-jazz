@@ -31,7 +31,7 @@ export default function Contact({ isOpen, onClose }) {
                             <p>{translate('contact.linkedin')}</p>
                         </div>
                     </a>
-                    <a href="mailto:jazzlens@gmail.com" className="contact-card email">
+                    <a href="mailto:lensjazz8@gmail.com" className="contact-card email">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="Gmail" className="card-icon email" />
                         <div className="card-text">
                             <h3>Email</h3>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import './Header.css';
 
-export default function Header({ onOpenNavigation }) {
+export default function Header() {
     const { translate, setCurrentLanguage } = useLanguage();
     
     const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function Header({ onOpenNavigation }) {
 
     const handleEmailClick = (e) => {
         e.preventDefault();
-        navigator.clipboard.writeText('jazzlens@gmail.com');
+        navigator.clipboard.writeText('lensjazz8@gmail.com');
         setShowEmailNotification(true);
         setTimeout(() => setShowEmailNotification(false), 2000);
     };
@@ -51,15 +51,14 @@ export default function Header({ onOpenNavigation }) {
                             <div id="lang-menu" className="dropdown-menu">
                                 <button onClick={() => handleLanguageChange('en')}>English</button>
                                 <button onClick={() => handleLanguageChange('nl')}>Nederlands</button>
-                                <button onClick={() => handleLanguageChange('id')}>Bahasa Indonesia</button>
                             </div>
                         )}
                     </div>
-
-                    <button id="nav-btn" className="icon-btn" aria-label="Navigation" onClick={onOpenNavigation}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg>
-                    </button>
                 </div>
+                <a href="/CV_Jazz_Lens_Resume.pdf" download className="resume-inline" aria-label={translate('btn.resume')} title={translate('btn.resume')}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>{translate('btn.resume')}</span>
+                </a>
             </div>
         </div>
     );

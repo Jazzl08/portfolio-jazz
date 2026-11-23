@@ -4,7 +4,10 @@ import { translations } from '@/i18n';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [currentLanguage, setCurrentLanguage] = useState(localStorage.getItem('lang') || 'en');
+    const [currentLanguage, setCurrentLanguage] = useState(() => {
+        const saved = localStorage.getItem('lang');
+        return saved && translations[saved] ? saved : 'en';
+    });
 
     useEffect(() => {
         localStorage.setItem('lang', currentLanguage);
