@@ -89,7 +89,7 @@ export default function Projects() {
                 { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', color: 'rgba(38, 77, 228, 0.1)', borderColor: 'rgba(38, 77, 228, 0.3)' }
             ],
             links: {
-                github: '#',
+                github: 'https://github.com/Jazzl08/yume-ramen-pern',
                 demo: 'https://frontend-2emq.onrender.com/'
             },
             features: [
