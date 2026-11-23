@@ -174,21 +174,3 @@
         column-gap: 0;
     }
 }
-
-
-
-
-
-.project-logo {
-    display: inline-flex;
-    align-items: center;
-    background: #ffffff;
-    border-radius: 6px;
-    padding: 3px 6px;
-}
-
-.project-logo img {
-    height: 20px;
-    width: auto;
-    display: block;
-}
