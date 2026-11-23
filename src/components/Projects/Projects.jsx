@@ -18,6 +18,7 @@ export default function Projects() {
             year: 'Oktober 2026',
             titleKey: 'proj.notetaker.title',
             descKey: 'proj.notetaker.desc',
+            roleKey: 'proj.notetaker.role',
             tech: [],
             links: { github: '#', demo: '#' },
             features: []
@@ -27,6 +28,7 @@ export default function Projects() {
             year: 'September 2026',
             titleKey: 'proj.crm.title',
             descKey: 'proj.crm.desc',
+            roleKey: 'proj.crm.role',
             tech: [
                 dev('NestJS', 'nestjs', '224, 35, 66'),
                 dev('Prisma', 'prisma', '90, 103, 216', { className: 'nextjs-icon' }),
@@ -42,6 +44,7 @@ export default function Projects() {
             year: 'September 2026',
             titleKey: 'proj.clientportal.title',
             descKey: 'proj.clientportal.desc',
+            roleKey: 'proj.clientportal.role',
             tech: [
                 dev('NestJS', 'nestjs', '224, 35, 66'),
                 dev('Prisma', 'prisma', '90, 103, 216', { className: 'nextjs-icon' }),
@@ -57,6 +60,7 @@ export default function Projects() {
             year: 'September 2026',
             titleKey: 'proj.tbh.title',
             descKey: 'proj.tbh.desc',
+            roleKey: 'proj.tbh.role',
             tech: [
                 dev('Next.js', 'nextjs', '128, 128, 128', { className: 'nextjs-icon' }),
                 dev('TypeScript', 'typescript', '49, 120, 198'),
@@ -171,6 +175,11 @@ export default function Projects() {
                                 </h3>
                             </div>
                             <p className="project-desc">{translate(project.descKey)}</p>
+                            {project.roleKey && (
+                                <p className="project-desc project-role">
+                                    <strong>{translate('proj.role.label')}</strong> {translate(project.roleKey)}
+                                </p>
+                            )}
                             <div className="project-tech">
                                 {project.tech.map((t, i) => (
                                     <div 

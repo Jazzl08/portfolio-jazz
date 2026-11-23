@@ -81,6 +81,15 @@
     max-width: 62ch;
 }
 
+.project-role {
+    margin-top: 0.6rem;
+}
+
+.project-role strong {
+    color: var(--primary-text, inherit);
+    font-weight: 600;
+}
+
 .project-tech {
     display: flex;
     flex-wrap: wrap;
