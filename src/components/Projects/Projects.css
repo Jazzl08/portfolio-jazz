@@ -60,9 +60,34 @@
     background-size: 100% 1px;
 }
 
-.project-title-arrow {
-    font-size: 0.9em;
-    line-height: 1;
+.project-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.project-github {
+    display: inline-flex;
+    color: var(--secondary-text);
+    transition: color 0.2s ease;
+}
+
+.project-github:hover {
+    color: var(--text-color);
+}
+
+.project-site-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--secondary-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.project-site-link:hover {
+    color: var(--text-color);
 }
 
 .project-year {
