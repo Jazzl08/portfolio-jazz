@@ -7,6 +7,25 @@ export default function Experience({ type }) {
     return (
         <section id="experience" className="fade-in">
             <div className="timeline">
+                {type === 'work' && (
+                    <div className="timeline-item">
+                        <a href="https://thebalihouses.com" target="_blank" className="timeline-logo" title="The Bali Houses" style={{fontWeight: 700, fontSize: '12px', color: '#111', textDecoration: 'none'}}>
+                            TBH
+                        </a>
+                        <div className="timeline-year">2026 - Present</div>
+                        <div className="timeline-content">
+                            <h3>{translate('exp.tbh.title')}</h3>
+                            <p className="description">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '5px', verticalAlign: 'text-bottom'}}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <span>{translate('exp.tbh.desc')}</span>
+                            </p>
+                            <p className="description" style={{marginTop: '5px'}}>
+                                {translate('exp.tbh.skills')}
+                            </p>
+                        </div>
+                    </div>
+                )}
+
                 {/* Tijdlijn item: Jumbo - Show only if type is 'work' */}
                 {type === 'work' && (
                     <div className="timeline-item">
